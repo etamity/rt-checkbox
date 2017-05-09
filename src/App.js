@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Checkbox from './Components/CheckBox/CheckBox.js';
+import CheckBox from './Components/CheckBox/CheckBox.js';
 
 class App extends Component {
   constructor(){
@@ -31,7 +31,7 @@ class App extends Component {
           component state should be managed by higher level container <br />
         </p>
         <div className="App-container">
-          <Checkbox checked={this.state.checked} label={this.state.checkboxLabel} onClick={onClick}></Checkbox>
+          <CheckBox checked={this.state.checked} label={this.state.checkboxLabel} onClick={onClick}></CheckBox>
         </div>
       </div>
     );
