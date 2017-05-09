@@ -1,9 +1,25 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Checkbox from './Components/CheckBox/CheckBox.js';
 
 class App extends Component {
+  constructor(){
+    super();
+    this.state = {
+        checked: false,
+        checkboxLabel: 'test checkbox'
+    }
+  }
+
   render() {
+
+    let onClick = (e) => {
+        this.setState({
+          checked: !this.state.checked,
+          checkboxLabel: this.state.checked ? 'test checkbox' : 'test checked'
+        });
+    }
     return (
       <div className="App">
         <div className="App-header">
@@ -11,8 +27,12 @@ class App extends Component {
           <h2>Welcome to React</h2>
         </div>
         <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
+          Checkbox is most common used component, use stateless method to create the component,
+          component state should be managed by higher level container <br />
         </p>
+        <div className="App-container">
+          <Checkbox checked={this.state.checked} label={this.state.checkboxLabel} onClick={onClick}></Checkbox>
+        </div>
       </div>
     );
   }
